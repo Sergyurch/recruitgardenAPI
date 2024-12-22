@@ -7,9 +7,15 @@ try {
     // Load Composer's autoloader
     require_once __DIR__ . '/../vendor/autoload.php';
 
-    // Load environment variables from .env file
-    $dotenv = Dotenv::createImmutable(__DIR__ . '/../');
-    $dotenv->load();
+    // Path to the .env file
+    $envPath = __DIR__ . '/../.env';
+
+    // Check if .env file exists before loading
+    if (file_exists($envPath)) {
+        // Load environment variables from .env file
+        $dotenv = Dotenv::createImmutable($envPath);
+        $dotenv->load();
+    }
 
     // Set the response type to JSON
     header('Content-Type: application/json');
