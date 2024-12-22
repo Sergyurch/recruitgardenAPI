@@ -8,7 +8,7 @@
 1. Створіть базу даних
     CREATE DATABASE your_database_name;
 2. Створіть таблицю farm_products
-    CREATE TABLE products (
+    CREATE TABLE farm_products (
         id SERIAL PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
         quantity INT NOT NULL CHECK (quantity >= 0),
