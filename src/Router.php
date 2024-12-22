@@ -35,7 +35,7 @@ class Router {
         if ($path === '/products' && $method === 'GET') { // Handle GET requests to retrieve all products
             echo json_encode($this->productController->getAll($_GET), JSON_UNESCAPED_UNICODE);
         } elseif ($id && $method === 'GET') { // Handle GET requests to retrieve a single product by ID
-            echo json_encode($this->productController->getOne($id), JSON_FORCE_OBJECT | JSON_UNESCAPED_UNICODE);
+            echo json_encode($this->productController->getOne($id), JSON_UNESCAPED_UNICODE);
         } elseif ($path === '/products' && $method === 'POST') { // Handle POST requests to create a new product
             // Get the raw POST data and decode it
             $data = json_decode(file_get_contents('php://input'), true);
